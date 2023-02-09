@@ -93,7 +93,9 @@ class NewsFragment : Fragment() {
         val bundle = Bundle().apply {
             putSerializable("article", article)
         }
-
-        Toast.makeText(requireContext(), "hi", Toast.LENGTH_SHORT).show()
+        findNavController().navigate(
+            R.id.action_newsFragment_to_articleFragment,
+            bundle
+        )
     }
 }

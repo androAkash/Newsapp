@@ -23,7 +23,6 @@ import com.example.newapp.viewModel.NewViewModel
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
-
 class SearchFragment : Fragment() {
     private val viewModel: NewViewModel by activityViewModels()
     private lateinit var binding: FragmentSearchBinding
@@ -115,6 +114,11 @@ class SearchFragment : Fragment() {
         val bundle = Bundle().apply {
             putSerializable("article", article)
         }
+
+        findNavController().navigate(
+            R.id.action_searchFragment_to_articleFragment,
+            bundle
+        )
     }
 
 }
